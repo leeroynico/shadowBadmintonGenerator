@@ -10,13 +10,28 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>Shadow générator</title>
   </head>
   <body>
-    durée de l'exercice
-    <input type="range" name="quantity" min="1" max="10" />
-    <button id="start">start</button>
-    <button id="stop">stop</button>
+    <label for="range" class="form-label"
+      >durée de l'exercice
+      <span id="rangeResult">60</span>
+      sec</label
+    >
+    <input
+      type="range"
+      class="form-range"
+      min="30"
+      max="80"
+      step="10"
+      id="range"
+    />
+    <div></div>
+    <button class="btn btn-success" id="start">start</button>
+    <div></div>
+    <button id="stop" class="btn btn-danger">stop</button>
+    <p id="count"></p>
   </body>
   <script src="script.js"></script>
 </html>

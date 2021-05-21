@@ -1,46 +1,72 @@
 const start = document.getElementById("start");
 const stopit = document.getElementById("stop");
+const range = document.getElementById("range");
 const talk = new SpeechSynthesisUtterance();
 
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-let intervalles = 1000;
-let timeToTrain = 8000;
+let intervalles = 2000;
+let timeToTrain = 6000;
 let intervalId = null;
+let timerId = null;
+let chronometre = 60;
+
+range.addEventListener("input", () => {
+  document.getElementById("rangeResult").innerHTML = range.value;
+  timeToTrain = range.value * 100;
+  chronometre = range.value;
+  console.log(timeToTrain);
+});
 
 function speak() {
   window.speechSynthesis.speak(talk);
   talk.text = getRandomArbitrary(1, 7);
-  const voices = window.speechSynthesis.getVoices();
-  talk.volume = 1; //accepts between [0 - 1], defaults to 1
-  talk.rate = 5; //accepts between [0.1 - 10], defaults to 1
-  talk.pitch = 1.5; //accepts between [0 - 2], defaults to 1
 }
 function warning(message) {
   window.speechSynthesis.speak(talk);
   talk.text = message;
-  const voices = window.speechSynthesis.getVoices();
-  talk.volume = 1; //accepts between [0 - 1], defaults to 1
-  talk.rate = 5; //accepts between [0.1 - 10], defaults to 1
-  talk.pitch = 1.5; //accepts between [0 - 2], defaults to 1
 }
-function annonceFin() {
-  warning("tranquille");
-}
+
 function stopTrain() {
   clearInterval(intervalId);
+  clearInterval(timerId);
 }
-start.addEventListener("click", (e) => {
-  warning("attention ça va démarrer");
-  intervalId = setInterval(speak, intervalles);
-  setTimeout(stopTrain, timeToTrain);
-  setTimeout(annonceFin, timeToTrain + 1500);
+
+function chrono() {
+  chronometre--;
+  if (chronometre === 0) {
+    warning("c'est fini");
+    clearInterval(timerId);
+  } else {
+    document.getElementById("count").innerHTML = chronometre;
+  }
+}
+function timer() {
+  timerId = setInterval(chrono, 1000);
+}
+function startTrain() {
+  intervalId = setInterval(train, intervalles);
+}
+
+let count = Math.floor((timeToTrain / intervalles) * 10);
+function train() {
+  count--;
+  if (count == 0) {
+    stopTrain();
+  } else {
+    speak();
+  }
+}
+
+start.addEventListener("click", () => {
+  startTrain();
+  timer();
 });
 
 stopit.addEventListener("click", () => {
   stopTrain();
 });
 
-// stopit.addEventListener("click", () => {});
+console.log(count);
