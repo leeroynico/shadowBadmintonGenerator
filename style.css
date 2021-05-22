@@ -1,3 +1,19 @@
-#range {
-  width: 50%;
+body {
+  background-color: #424242;
+  color: rgb(255, 201, 160);
+}
+
+#cardContainer {
+  background-color: #333;
+}
+
+#timeParams {
+  color: red;
+  font-size: 2em;
+}
+
+select {
+  background: #333;
+  color: rgb(255, 201, 160);
+  font-size: 1.2em;
 }

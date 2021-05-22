@@ -17,16 +17,14 @@
     <div class="container">
       <div class="row">
         <h1 class="text-center my-3">Shadow générator</h1>
-        <div class="card col-10 container">
-          <!-- <img
+        <div class="card col-10 container" id="cardContainer">
+          <img
             src="image/BADMINTON-TRAINING.jpeg"
             alt="top-card"
             class="card-img-top"
-          /> -->
+          />
           <label for="range" class="form-label mx-auto mt-3">
-            durée de l'exercice
-            <span id="rangeResult">60</span>
-            sec
+            choisissez la durée de l'exercice
           </label>
           <input
             type="range"
@@ -36,14 +34,15 @@
             step="10"
             id="range"
           />
-          <select
-            class="form-select mt-4 col-10"
-            aria-label="Default select example"
-          >
+          <div class="text-center" id="timeParams">
+            <span id="rangeResult">60</span>
+            sec
+          </div>
+          <select id="intervalUser">
             <option selected>choisissez votre niveau</option>
-            <option value="1">tranquille</option>
-            <option value="2">chaud!!</option>
-            <option value="3">warrior</option>
+            <option value="5000">tranquille</option>
+            <option value="3000">chaud!!</option>
+            <option value="2000">warrior</option>
           </select>
           <button class="btn btn-primary col-4 my-3 mx-auto btn-lg" id="start">
             start
@@ -51,7 +50,7 @@
           <button id="stop" class="btn btn-danger col-4 my-3 mx-auto btn-lg">
             stop
           </button>
-          <h2 id="count" class="text-center"></h2>
+          <h1 id="count" class="text-center"></h1>
         </div>
       </div>
     </div>

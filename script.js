@@ -1,6 +1,7 @@
 const start = document.getElementById("start");
 const stopit = document.getElementById("stop");
 const range = document.getElementById("range");
+const intervalUser = document.getElementById("intervalUser");
 const talk = new SpeechSynthesisUtterance();
 
 function getRandomArbitrary(min, max) {
@@ -17,7 +18,10 @@ range.addEventListener("input", () => {
   document.getElementById("rangeResult").innerHTML = range.value;
   timeToTrain = range.value * 100;
   chronometre = range.value;
-  console.log(timeToTrain);
+});
+intervalUser.addEventListener("input", () => {
+  intervalles = intervalUser.value;
+  console.log(intervalles);
 });
 
 function speak() {
