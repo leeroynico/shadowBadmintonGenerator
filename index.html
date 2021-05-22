@@ -14,24 +14,38 @@
     <title>Shadow générator</title>
   </head>
   <body>
-    <label for="range" class="form-label"
-      >durée de l'exercice
-      <span id="rangeResult">60</span>
-      sec</label
-    >
-    <input
-      type="range"
-      class="form-range"
-      min="30"
-      max="80"
-      step="10"
-      id="range"
-    />
-    <div></div>
-    <button class="btn btn-success" id="start">start</button>
-    <div></div>
-    <button id="stop" class="btn btn-danger">stop</button>
-    <p id="count"></p>
+    <div class="container">
+      <div class="row">
+        <h1 class="text-center">Shadow générator</h1>
+        <div class="card col-10 container">
+          <img
+            src="image/BADMINTON-TRAINING.jpeg"
+            alt="top-card"
+            class="card-img-top"
+          />
+          <label for="range" class="form-label"
+            >durée de l'exercice
+            <span id="rangeResult">60</span>
+            sec</label
+          >
+          <input
+            type="range"
+            class="form-range"
+            min="30"
+            max="80"
+            step="10"
+            id="range"
+          />
+          <button class="btn btn-primary col-4 my-3 mx-auto btn-lg" id="start">
+            start
+          </button>
+          <button id="stop" class="btn btn-danger col-4 my-3 mx-auto btn-lg">
+            stop
+          </button>
+          <h2 id="count" class="text-center"></h2>
+        </div>
+      </div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>

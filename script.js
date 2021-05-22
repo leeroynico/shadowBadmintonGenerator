@@ -7,7 +7,7 @@ function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-let intervalles = 2000;
+let intervalles = 3000;
 let timeToTrain = 6000;
 let intervalId = null;
 let timerId = null;
@@ -37,8 +37,9 @@ function stopTrain() {
 function chrono() {
   chronometre--;
   if (chronometre === 0) {
+    document.getElementById("count").innerHTML = "fin du timer";
     warning("c'est fini");
-    clearInterval(timerId);
+    stopTrain();
   } else {
     document.getElementById("count").innerHTML = chronometre;
   }
@@ -59,14 +60,16 @@ function train() {
     speak();
   }
 }
+function warningStart() {
+  warning("attention");
+}
 
 start.addEventListener("click", () => {
-  startTrain();
+  warning("attention");
   timer();
+  startTrain();
 });
 
 stopit.addEventListener("click", () => {
   stopTrain();
 });
-
-console.log(count);
