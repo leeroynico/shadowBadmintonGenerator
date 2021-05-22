@@ -48,6 +48,7 @@ function timer() {
   timerId = setInterval(chrono, 1000);
 }
 function startTrain() {
+  warning("prêt?");
   intervalId = setInterval(train, intervalles);
 }
 
@@ -60,14 +61,15 @@ function train() {
     speak();
   }
 }
-function warningStart() {
-  warning("attention");
-}
 
 start.addEventListener("click", () => {
-  warning("attention");
-  timer();
-  startTrain();
+  document.getElementById("count").innerHTML = "prépares toi ";
+  setTimeout(function () {
+    startTrain();
+    setTimeout(function () {
+      timer();
+    }, 3000);
+  }, 10);
 });
 
 stopit.addEventListener("click", () => {
