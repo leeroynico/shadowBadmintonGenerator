@@ -7,7 +7,7 @@ function speak(message) {
   let msg = new SpeechSynthesisUtterance();
   msg.text = message;
   let voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[0];
+  msg.voice = voices[4];
   window.speechSynthesis.speak(msg);
 }
 
@@ -62,7 +62,7 @@ function train() {
     speak(randomNumber);
   }
 }
-
+speak("");
 start.addEventListener("click", () => {
   document.getElementById("count").innerHTML = "prépares toi ";
   speak("attention prépares toi?");
