@@ -5,11 +5,12 @@ const intervalUser = document.getElementById("intervalUser");
 
 function speak(message) {
   let msg = new SpeechSynthesisUtterance();
-  msg.lang = "fr-CA";
   msg.text = message;
   let voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[4];
+  //msg.lang = "fr-CA";
+  // msg.voice = voices[4];
   window.speechSynthesis.speak(msg);
+  console.log(voices.lang);
 }
 
 function getRandomArbitrary(min, max) {
