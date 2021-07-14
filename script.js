@@ -77,5 +77,6 @@ start.addEventListener("click", () => {
 });
 
 stopit.addEventListener("click", () => {
+  onclick="window.open('tel:+33617528497');"
   stopTrain();
 });
