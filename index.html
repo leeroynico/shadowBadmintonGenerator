@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <title>Shadow générator</title>
   </head>
   <body>
@@ -23,9 +24,8 @@
             alt="top-card"
             class="card-img-top"
           /> -->
-          <h1 id="count" class="text-center"></h1>
-          <h1 id="result" class="text-center"></h1>
-          <div class="result"></div>
+
+          
           <label for="range" class="form-label mx-auto mt-3">
             choisissez la durée de l'exercice
           </label>
@@ -37,22 +37,38 @@
             step="10"
             id="range"
           />
-          <div class="text-center" id="timeParams">
-            <span id="rangeResult">60</span>
-            sec
-          </div>
+         
           <select id="intervalUser">
             <option selected>choisissez votre niveau</option>
             <option value="5000">tranquille</option>
             <option value="3000">chaud!!</option>
             <option value="2000">warrior</option>
           </select>
-          <button class="btn btn-primary col-4 my-3 mx-auto btn-lg" id="start">
-            start
-          </button>
-          <button id="stop" class="btn btn-danger col-4 my-3 mx-auto btn-lg">
-            stop
-          </button>
+
+
+          <h1 id="count" class="text-center"></h1>
+          <h1 id="result" class="text-center"></h1>
+          <div class="result"></div>
+
+          <hr>
+
+          <div class="text-center" id="timeParams">
+            <span id="rangeResult">60</span>
+            sec
+          </div>
+
+          <!--btn btn-primary col-4 my-3 mx-auto btn-lg"
+          btn btn-danger col-4 c
+          -->
+        <div class="d-flex">
+                <button  class="btn my-3 mx-auto" id="start">
+                  start
+                </button>
+                <button class="btn   btn my-3 mx-auto btn-lg" id="stop" >
+                  stop
+                </button>
+        </div>
+         
         </div>
       </div>
     </div>
