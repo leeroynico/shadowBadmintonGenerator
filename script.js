@@ -60,7 +60,7 @@ function train() {
   if (count == 0) {
     stopTrain();
   } else {
-    let randomNumber = getRandomArbitrary(1, 6);
+    let randomNumber = getRandomArbitrary(1, 7);
     speak(randomNumber);
   }
 }
