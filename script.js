@@ -10,8 +10,10 @@ function speak(message) {
   //msg.lang = "fr-CA";
   // msg.voice = voices[4];
   window.speechSynthesis.speak(msg);
-  console.log(voices.lang);
+  console.log(msg)
+  
 }
+
 
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -62,6 +64,7 @@ function train() {
   } else {
     let randomNumber = getRandomArbitrary(1, 7);
     speak(randomNumber);
+    document.getElementById('placement').textContent = 'placement : ' + randomNumber.toString();
   }
 }
 speak("");
@@ -79,3 +82,5 @@ start.addEventListener("click", () => {
 stopit.addEventListener("click", () => {
   stopTrain();
 });
+
+
