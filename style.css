@@ -46,3 +46,9 @@ color: white;
 #stop:hover{
   background-color: red;
 }
+
+.placement{
+  font-size:  90px;
+  display: flex;
+  justify-content: center;
+}

@@ -10,8 +10,8 @@ function speak(message) {
   //msg.lang = "fr-CA";
   // msg.voice = voices[4];
   window.speechSynthesis.speak(msg);
-  console.log(voices.lang);
 }
+
 
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -31,12 +31,10 @@ range.addEventListener("input", () => {
 intervalUser.addEventListener("input", () => {
   intervalles = intervalUser.value;
 });
-
 function stopTrain() {
   clearInterval(intervalId);
   clearInterval(timerId);
 }
-
 function chrono() {
   chronometre--;
   if (chronometre === 0) {
@@ -62,6 +60,7 @@ function train() {
   } else {
     let randomNumber = getRandomArbitrary(1, 7);
     speak(randomNumber);
+    document.getElementById('placement').textContent = 'placement : ' + randomNumber.toString();
   }
 }
 speak("");
@@ -79,3 +78,5 @@ start.addEventListener("click", () => {
 stopit.addEventListener("click", () => {
   stopTrain();
 });
+
+
