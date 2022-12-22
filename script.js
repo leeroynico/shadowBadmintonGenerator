@@ -10,8 +10,6 @@ function speak(message) {
   //msg.lang = "fr-CA";
   // msg.voice = voices[4];
   window.speechSynthesis.speak(msg);
-  console.log(msg)
-  
 }
 
 
@@ -33,12 +31,10 @@ range.addEventListener("input", () => {
 intervalUser.addEventListener("input", () => {
   intervalles = intervalUser.value;
 });
-
 function stopTrain() {
   clearInterval(intervalId);
   clearInterval(timerId);
 }
-
 function chrono() {
   chronometre--;
   if (chronometre === 0) {
